@@ -1,0 +1,9 @@
+.root{
+    -fx-padding: 15;
+    -fx-background-color: cornsilk;
+}
+
+.label{
+    -fx-font-fill: #4682b4;
+    -fx-font-size: 1.5em;
+}
