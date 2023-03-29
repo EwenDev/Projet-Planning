@@ -34,6 +34,8 @@ public class VBoxRoot extends VBox implements ConstanteCalendrier{
 
             VBox.setMargin(labelDate, new Insets(8));
             boiteDates.getChildren().add(labelDate);
+
+
         }
         this.getChildren().addAll(labelTitle, scrollPaneDates);
     }

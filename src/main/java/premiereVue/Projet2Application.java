@@ -8,8 +8,8 @@ import java.io.File;
 
 public class Projet2Application extends Application{
     public void start(Stage stage){
-        VBox root = new VBaseRootStackMonths();
-        Scene scene = new Scene(root,400,380);
+        VBox root = new CalendrierTilePane();
+        Scene scene = new Scene(root,260,300);
         File [] fichierCss = new File("css").listFiles();
         for (File fichier : fichierCss){
             scene.getStylesheets().add(fichier.toURI().toString());
