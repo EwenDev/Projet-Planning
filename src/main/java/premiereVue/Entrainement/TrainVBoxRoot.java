@@ -14,11 +14,11 @@ import javafx.scene.control.Button;
 
 import java.util.List;
 
-public class VBaseRootStackMonths extends VBox implements ConstanteCalendrier{
+public class TrainVBoxRoot extends VBox implements ConstanteCalendrier{
 
     private int mois;
 
-    public VBaseRootStackMonths(){
+    public TrainVBoxRoot(){
 
         super(15); //espacement
         DateCalendrier today = new DateCalendrier();
@@ -35,7 +35,7 @@ public class VBaseRootStackMonths extends VBox implements ConstanteCalendrier{
         HBox.setMargin(buttonPremierMois, new Insets(5));
         HBox.setMargin(buttonDernierMois, new Insets(5));
 
-        boiteLabel.getChildren().addAll(buttonPremierMois,buttonMoisPrecedent,buttonMoisSuivant,buttonDernierMois);
+        boiteLabel.getChildren().addAll(buttonPremierMois,buttonMoisPrecedent,buttonMoisSuivant,buttonDernierMois, labelTitle);
 
         StackPane stackPaneMois = new StackPane();
         for (int i = 1; i<13; i++){
@@ -76,7 +76,7 @@ public class VBaseRootStackMonths extends VBox implements ConstanteCalendrier{
             System.out.println(paneMois.get(lastIndice).getAccessibleText());
             paneMois.get(lastIndice).toBack();
         }
-        this.getChildren().addAll(labelTitle,boiteLabel, stackPaneMois);
+        this.getChildren().addAll(boiteLabel, stackPaneMois);
 
         buttonMoisSuivant.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent actionEvent) {

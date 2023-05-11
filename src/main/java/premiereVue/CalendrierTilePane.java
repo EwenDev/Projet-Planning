@@ -1,13 +1,11 @@
 package premiereVue;
 
 import Calendrier.*;
+import Controleur.Controleur;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
-import Calendrier.*;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -25,6 +23,7 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
     public CalendrierTilePane(){
 
         super(15); //espacement
+        Controleur controleur = HBoxRoot.getControleur();
         Date today = new Date();
         mois = today.getMois();
         Label labelTitle = new Label(MOIS[mois-1] + " " + today.getAnnee());
@@ -33,13 +32,13 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
         Button buttonPremierMois = new Button("<<");
         Button buttonDernierMois = new Button(">>");
         HBox boiteLabel = new HBox();
-        HBox.setMargin(labelTitle, new Insets(7));
+        HBox.setMargin(labelTitle, new Insets(10));
         HBox.setMargin(buttonMoisPrecedent, new Insets(2));
         HBox.setMargin(buttonMoisSuivant, new Insets(2));
         HBox.setMargin(buttonPremierMois, new Insets(2));
-        HBox.setMargin(buttonDernierMois, new Insets(2));
+        HBox.setMargin(buttonDernierMois, new Insets(2,100,2,2));
 
-        boiteLabel.getChildren().addAll(buttonPremierMois,buttonMoisPrecedent,buttonMoisSuivant,buttonDernierMois, labelTitle);
+        boiteLabel.getChildren().addAll(buttonPremierMois,buttonMoisPrecedent,buttonMoisSuivant,buttonDernierMois);
 
         StackPane stackPaneMois = new StackPane();
         ToggleGroup buttonGroup = new ToggleGroup();
@@ -59,8 +58,9 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
                 tilePane.getChildren().add(labelJour);
             }
             for (DateCalendrier date : monthCalendar.getDates()){
+                int jour = date.getJour();
                 //un toggleButton par date instanciée avec le n° du jour
-                ToggleButton boutonDate = new ToggleButton(Integer.toString(date.getJour()));
+                ToggleButton boutonDate = new ToggleButton(Integer.toString(jour));
                 //insère le toggleButton dans le groupe de boutons
                 boutonDate.setToggleGroup(buttonGroup);
                 tilePane.getChildren().add(boutonDate);
@@ -72,6 +72,8 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
                         System.out.println(boutonDate.getUserData());
                     }
                 });
+                boutonDate.addEventHandler(ActionEvent.ACTION, controleur);
+
                 if (date.getMois() != monthCalendar.getMois()){
                     boutonDate.setId("dateHorsMois");
                 }
@@ -86,24 +88,31 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
         final int lastIndice = paneMois.size()-1;
         //placer le mois courant en haut de la piste
 
+        for (Node node : paneMois){
+            node.setVisible(false);
+        }
         while (!paneMois.get(lastIndice).getAccessibleText().equals(MOIS[today.getMois()-1])) {
             System.out.println(paneMois.get(lastIndice).getAccessibleText());
             paneMois.get(lastIndice).toBack();
         }
-        this.getChildren().addAll(stackPaneMois,boiteLabel);
+        paneMois.get(lastIndice).setVisible(true);
+        this.getChildren().addAll(labelTitle,boiteLabel,stackPaneMois);
 
         buttonMoisSuivant.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent actionEvent) {
                 System.out.println("bouton next");
+                paneMois.get(lastIndice).setVisible(false);
                 paneMois.get(0).toFront();
+                paneMois.get(lastIndice).setVisible(true);
                 labelTitle.setText(paneMois.get(0).getAccessibleText() + " " + today.getAnnee());
-
             }
         });
         buttonMoisPrecedent.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent actionEvent) {
                 System.out.println("bouton last");
+                paneMois.get(lastIndice).setVisible(false);
                 paneMois.get(lastIndice).toBack();
+                paneMois.get(lastIndice).setVisible(true);
                 labelTitle.setText(paneMois.get(lastIndice).getAccessibleText() + " " + today.getAnnee());
             }
         });
@@ -112,8 +121,10 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
             public void handle(ActionEvent actionEvent) {
                 System.out.println("bouton last");
                 while(!paneMois.get(lastIndice).getAccessibleText().equals(MOIS[11])) {
+                    paneMois.get(lastIndice).setVisible(false);
                     paneMois.get(lastIndice).toBack();
                 }
+                paneMois.get(lastIndice).setVisible(true);
                 labelTitle.setText(paneMois.get(lastIndice).getAccessibleText() + " " + today.getAnnee());
             }
         });
@@ -123,7 +134,10 @@ public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
                 System.out.println("bouton last");
                 while(!paneMois.get(lastIndice).getAccessibleText().equals(MOIS[0])) {
                     paneMois.get(lastIndice).setVisible(false);
+                    paneMois.get(lastIndice).toBack();
+
                 }
+                paneMois.get(lastIndice).setVisible(true);
                 labelTitle.setText(paneMois.get(lastIndice).getAccessibleText() + " " + today.getAnnee());
             }
         });

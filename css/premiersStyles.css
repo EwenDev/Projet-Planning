@@ -1,15 +1,14 @@
 .root{
-    -fx-padding: 15;
     -fx-padding: 15;;
 }
 
 .label{
-    -fx-font-fill: #4682b4;
+    -fx-font-fill: #282c34;
     -fx-font-size: 1em;
 }
 
 .button{
-    -fx-background-color: #4682b4;
+    -fx-background-color: #b44646;
     -fx-text-fill: white;
     -fx-background-size: 50px;
 }
@@ -20,10 +19,17 @@
 
 .toggle-button {
     -fx-background-color: white;
+    -fx-min-width: 50px;
+    -fx-max-width: 50px;
 }
 
 .toggle-button:selected{
-    -fx-background-color: #92c9fc;
+    -fx-background-color: #fc9292;
+}
+
+.scroll-pane {
+    -fx-background: #ddf5ee;
+    -fx-border-color: #a05f5f;
 }
 
 #dateHorsMois{
@@ -32,5 +38,5 @@
 }
 
 #today{
-    -fx-background-color: #4faaff;
+    -fx-background-color: #ff4f4f;
 }

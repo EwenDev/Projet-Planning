@@ -7,8 +7,8 @@ import javafx.scene.control.ScrollPane;
 import Calendrier.*;
 
 
-public class VBoxRoot extends VBox implements ConstanteCalendrier{
-    public VBoxRoot(){
+public class VBoxCalendrier extends VBox implements ConstanteCalendrier{
+    public VBoxCalendrier(){
         CalendrierDuMois monthCalendar = new CalendrierDuMois(3,2023);
         System.out.println(monthCalendar);
 

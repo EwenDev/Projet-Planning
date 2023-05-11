@@ -7,4 +7,5 @@ module com.example.projetihm {
     opens com.example.projetihm to javafx.fxml;
     exports com.example.projetihm;
     exports premiereVue;
+    exports premiereVue.Entrainement;
 }
