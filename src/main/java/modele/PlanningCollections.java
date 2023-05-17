@@ -1,5 +1,6 @@
-package Calendrier;
+package modele;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -7,7 +8,8 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map;
 
-public class PlanningCollections {
+
+public class PlanningCollections implements Serializable {
     private ArrayList <Reservation> chReserv;
     private TreeSet <Reservation> chTrReserv;
     private Map <Integer, Set <Reservation>> chSemRes;
@@ -27,10 +29,10 @@ public class PlanningCollections {
     public String toString() {
         String strTab = new String();
         strTab += chReserv.size() + "\n";
-        strTab += chReserv.toString();
-        strTab += "\n" + chTrReserv.size() + "\n";
-        strTab += chTrReserv.toString();
-        strTab += "\n" + chSemRes.size() + "\n";
+        strTab += chReserv.toString() + "\n";
+        strTab += chTrReserv.size() + "\n";
+        strTab += chTrReserv.toString() + "\n";
+        strTab += chSemRes.size() + "\n";
         strTab += chSemRes;
         return strTab;
     }
@@ -51,8 +53,8 @@ public class PlanningCollections {
         chReserv.add(parRes);
         chTrReserv.add(parRes);
 
-        DateCalendrier tempDate = new DateCalendrier(parRes.getDate().chJour, parRes.getDate().chMois, parRes.getDate().chAnnee);
-        int numSem = tempDate.getJourSemaine();
+        DateCalendrier tempDate = new DateCalendrier(parRes.getChDate().chJour, parRes.getChDate().chMois, parRes.getChDate().chAnnee);
+        int numSem = tempDate.getWeekOfYear();
         Set <Reservation> set = chSemRes.get(numSem);
 
         if (set  == null) {
@@ -78,7 +80,7 @@ public class PlanningCollections {
         Iterator <Reservation> itr = chTrReserv.iterator();
         while (itr.hasNext()){
             Reservation tempRes = itr.next();
-            if (tempRes.getDate().compareTo(parDate) == 0)
+            if (tempRes.getChDate().compareTo(parDate) == 0)
                 result.add(tempRes);
         }
         if (result.isEmpty())
@@ -98,7 +100,7 @@ public class PlanningCollections {
         Iterator <Reservation> itr = chTrReserv.iterator();
         while (itr.hasNext()){
             Reservation tempRes = itr.next();
-            if (tempRes.getIntitule().contains(parString))
+            if (tempRes.getChIntitule().contains(parString))
                 result.add(tempRes);
         }
         if (result.isEmpty())

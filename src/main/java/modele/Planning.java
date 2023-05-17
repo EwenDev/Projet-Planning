@@ -1,5 +1,8 @@
-package Calendrier;
-public class Planning{
+package modele;
+
+import java.io.Serializable;
+
+public class Planning implements Serializable {
 
     private Reservation [] chTabReservations;
     private final int TAILLE;
@@ -34,7 +37,7 @@ public class Planning{
 
     public Reservation getReservation (Date parDate){
         for (Reservation reserv : chTabReservations){
-            if (reserv.getDate().compareTo(parDate)==0){
+            if (reserv.getChDate().compareTo(parDate)==0){
                 return reserv;
             }
         }
@@ -45,7 +48,7 @@ public class Planning{
         Reservation [] tabReservations = new Reservation[TAILLE];
         int nbReservations = 0;
         for (Reservation reserv : chTabReservations){
-            if (reserv.getDate().compareTo(parDate)==0){
+            if (reserv.getChDate().compareTo(parDate)==0){
                 tabReservations[nbReservations] = reserv;
                 nbReservations++;
             }

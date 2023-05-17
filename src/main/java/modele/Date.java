@@ -1,9 +1,10 @@
-package Calendrier;
+package modele;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class Date {
+public class Date implements Serializable {
 	protected int chJour;
 	protected int chMois;
 	protected int chAnnee;

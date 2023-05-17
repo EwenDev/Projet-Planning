@@ -1,10 +1,10 @@
-package premiereVue;
+package vue;
 
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Label;
 import javafx.geometry.Insets;
 import javafx.scene.control.ScrollPane;
-import Calendrier.*;
+import modele.*;
 
 
 public class VBoxCalendrier extends VBox implements ConstanteCalendrier{

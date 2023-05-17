@@ -1,12 +1,12 @@
-package Controleur;
+package controleur;
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
-import Calendrier.*;
-import premiereVue.*;
+import modele.*;
+import vue.*;
+import outils.LectureEcriture;
 
 public class Controleur implements EventHandler {
 
@@ -31,7 +31,7 @@ public class Controleur implements EventHandler {
                     try {
                         Reservation res = new Reservation(GridPaneFormulaireReservation.getDate(), new PlageHoraire(GridPaneFormulaireReservation.getHoraireDebut(), GridPaneFormulaireReservation.getHoraireFin()), GridPaneFormulaireReservation.getIntitule(), GridPaneFormulaireReservation.getNiveau());
                         planning.ajout(res);
-                        //MEMO POUR MOI : SOUCIS AVEC L'ENREGISTREMENT DES RESERVATIONS - (sûrement dans la méthode ajout)
+                        LectureEcriture.ecriture(HBoxRoot.getPlanningFile(), planning);
                         GridPaneFormulaireReservation.fieldCours.setText(null);
                         GridPaneFormulaireReservation.radioGroup.selectToggle(null);
                         GridPaneFormulaireReservation.comboHeureDebut.setValue(null);
@@ -44,6 +44,7 @@ public class Controleur implements EventHandler {
                     } catch (ExceptionPlanning e) {
                         e.printStackTrace();
                     }
+                    break;
                 case "Annuler":
                     GridPaneFormulaireReservation.fieldCours.setText(null);
                     GridPaneFormulaireReservation.comboHeureDebut.setValue(null);
@@ -52,6 +53,9 @@ public class Controleur implements EventHandler {
                     GridPaneFormulaireReservation.comboMinFin.setValue(null);
                     GridPaneFormulaireReservation.radioGroup.selectToggle(null);
                     System.out.println("Annulation");
+                    break;
+                default :
+                    break;
 
             }
         }

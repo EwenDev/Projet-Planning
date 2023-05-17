@@ -1,4 +1,4 @@
-package Calendrier;
+package modele;
 public class DenseMatrix {
     private double[][] vals;
     private int nRow;

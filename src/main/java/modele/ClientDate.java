@@ -1,4 +1,4 @@
-package Calendrier;
+package modele;
 public class ClientDate {
 
     public static void main (String [] args){

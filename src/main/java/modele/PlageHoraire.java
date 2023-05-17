@@ -1,5 +1,8 @@
-package Calendrier;
-public class PlageHoraire{
+package modele;
+
+import java.io.Serializable;
+
+public class PlageHoraire implements Serializable {
     final static int DUREE_MIN = 60;
     Horaire chHoraireDebut;
     Horaire chHoraireFin;

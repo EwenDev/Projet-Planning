@@ -1,12 +1,14 @@
-package premiereVue;
+package vue;
 
-import Calendrier.*;
+import modele.*;
+import outils.LectureEcriture;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
-import Controleur.Controleur;
-import javafx.scene.control.Label;
-import javafx.geometry.Insets;
+import controleur.Controleur;
+import outils.LectureEcriture;
+
+import java.io.File;
 
 
 public class HBoxRoot extends HBox implements ConstanteCalendrier {
@@ -18,9 +20,17 @@ public class HBoxRoot extends HBox implements ConstanteCalendrier {
 
     private static VBoxAffichagePlanning oneWeekTable;
 
+    private static File planningFile;
+
     public HBoxRoot(){
         super(40);
-        planning = new PlanningCollections();
+        planningFile = new File("sauvegarde"+File.separator+"planning-sports-2023.ser");
+        if (planningFile.exists()){
+            planning = (PlanningCollections) LectureEcriture.lecture(planningFile);
+        }
+        else{
+            planning = new PlanningCollections();
+        }
         controleur = new Controleur();
         oneWeekTable = new VBoxAffichagePlanning(null);
         VBox boiteCalendrier = new CalendrierTilePane();
@@ -34,6 +44,10 @@ public class HBoxRoot extends HBox implements ConstanteCalendrier {
      public static Controleur getControleur() {
          return controleur;
      }
+
+    public static File getPlanningFile() {
+        return planningFile;
+    }
 
     public static GridPaneFormulaireReservation getReservationPane() {
         return reservationPane;

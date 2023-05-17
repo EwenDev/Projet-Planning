@@ -1,33 +1,36 @@
-package Calendrier;
-public class Reservation implements Comparable<Reservation>{
+package modele;
 
-    private Date chDate;
-    private PlageHoraire chPlageHoraire;
-    private String chIntitule;
+import java.io.Serializable;
 
-    private String chNiveau;
+public class Reservation implements Comparable<Reservation>, Serializable {
+
+    private Date ChDate;
+    private PlageHoraire ChPlageHoraire;
+    private String ChIntitule;
+
+    private String ChNiveau;
 
     public Reservation(Date parDate, PlageHoraire parPlageHoraire, String parIntitule) throws ExceptionPlanning{
         if (!parDate.estValide() || !parPlageHoraire.estValide() || parIntitule == null || parIntitule.equals("")){
             throw  new ExceptionPlanning(0);
         }
-        chDate = parDate;
-        chPlageHoraire = parPlageHoraire;
-        chIntitule = parIntitule;
+        ChDate = parDate;
+        ChPlageHoraire = parPlageHoraire;
+        ChIntitule = parIntitule;
     }
 
     public Reservation(Date parDate, PlageHoraire parPlageHoraire, String parIntitule, String parNiveau) throws ExceptionPlanning{
         if (!parDate.estValide() || !parPlageHoraire.estValide() || parIntitule == null || parIntitule.equals("")){
             throw  new ExceptionPlanning(0);
         }
-        chDate = parDate;
-        chPlageHoraire = parPlageHoraire;
-        chIntitule = parIntitule;
-        chNiveau = parNiveau;
+        ChDate = parDate;
+        ChPlageHoraire = parPlageHoraire;
+        ChIntitule = parIntitule;
+        ChNiveau = parNiveau;
     }
 
     public String toString(){
-        return chDate + ", " + chPlageHoraire + ", " + chIntitule;
+        return ChDate + ", " + ChPlageHoraire + ", " + ChIntitule;
     }
 
     /**this et la reservation reçue en argument sont supposés valides
@@ -37,24 +40,26 @@ public class Reservation implements Comparable<Reservation>{
      * @param l'horaire comparée à this
      */
     public int compareTo (Reservation parReservation){
-        int compareDate = this.chDate.compareTo(parReservation.chDate);
+        int compareDate = this.ChDate.compareTo(parReservation.ChDate);
         if (compareDate != 0){
             return compareDate;
         }
-        return this.chPlageHoraire.compareTo(parReservation.chPlageHoraire);
+        return this.ChPlageHoraire.compareTo(parReservation.ChPlageHoraire);
     }
 
-    public Date getDate() {return chDate;}
+    public Date getChDate() {return ChDate;}
 
-    public String getIntitule(){
-        return chIntitule;
+    public String getChIntitule(){
+        return ChIntitule;
     }
 
-    public String getNiveau() {
-        return chNiveau;
+    public String getChNiveau() {
+        return ChNiveau;
     }
+
+    public PlageHoraire getChPlageHoraire() {return ChPlageHoraire;}
 
     public boolean estValide(){
-        return chDate.estValide() && chPlageHoraire.estValide();
+        return ChDate.estValide() && ChPlageHoraire.estValide();
     }
 }

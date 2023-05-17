@@ -1,6 +1,6 @@
-package premiereVue;
+package vue;
 
-import Calendrier.*;
+import modele.*;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;

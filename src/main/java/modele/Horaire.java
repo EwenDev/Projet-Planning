@@ -1,5 +1,8 @@
-package Calendrier;
-public class Horaire {
+package modele;
+
+import java.io.Serializable;
+
+public class Horaire implements Serializable {
     private int chHeure;
     private int chQuartHeure;
     public Horaire (int parHeure, int parQuartHeure) {

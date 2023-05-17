@@ -1,9 +1,8 @@
-package premiereVue;
+package vue;
 
-import Controleur.Controleur;
-import Calendrier.*;
+import controleur.Controleur;
+import modele.*;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;

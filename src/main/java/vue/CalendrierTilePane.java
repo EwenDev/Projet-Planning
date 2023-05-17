@@ -1,14 +1,13 @@
-package premiereVue;
+package vue;
 
-import Calendrier.*;
-import Controleur.Controleur;
+import modele.*;
+import controleur.Controleur;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;

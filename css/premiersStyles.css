@@ -8,7 +8,7 @@
 }
 
 .button{
-    -fx-background-color: #b44646;
+    -fx-background-color: #ad46b4;
     -fx-text-fill: white;
     -fx-background-size: 50px;
 }
@@ -24,12 +24,12 @@
 }
 
 .toggle-button:selected{
-    -fx-background-color: #fc9292;
+    -fx-background-color: #f892fc;
 }
 
 .scroll-pane {
     -fx-background: #ddf5ee;
-    -fx-border-color: #a05f5f;
+    -fx-border-color: #945fa0;
 }
 
 #dateHorsMois{
@@ -38,5 +38,5 @@
 }
 
 #today{
-    -fx-background-color: #ff4f4f;
+    -fx-background-color: #d94fff;
 }

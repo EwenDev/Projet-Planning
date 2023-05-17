@@ -1,10 +1,10 @@
-package Calendrier;
+package modele;
 
+import java.io.Serializable;
 import java.util.TreeSet;
 import java.util.Collection;
 
-
-public class CalendrierDuMois {
+public class CalendrierDuMois implements Serializable {
 
     private int mois;
     private int annee;
