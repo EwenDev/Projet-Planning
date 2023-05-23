@@ -9,11 +9,18 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 import modele.*;
 
+/**
+ * Classe VBoxAffichagePlanning qui permet de créer une VBox contenant un label et un TableView
+ */
 public class VBoxAffichagePlanning extends VBox {
     private DateCalendrier date;
     private Label weekOfYear;
     private TableView <Reservation> tableReservations;
 
+    /**
+     * Constructeur de la classe VBoxAffichagePlanning qui va créer une VBox contenant un label et un TableView
+     * @param reservations les réservations à afficher dans le TableView
+     */
     public VBoxAffichagePlanning(Set<Reservation> reservations){
         super(15);
         weekOfYear = new Label();
@@ -52,6 +59,11 @@ public class VBoxAffichagePlanning extends VBox {
         this.getChildren().addAll(weekOfYear, tableReservations);
     }
 
+    /**
+     * Méthode permettant de mettre à jour le label et le TableView
+     * @param parDate la date à afficher dans le label
+     * @param reservations les réservations à afficher dans le TableView
+     */
     public void update(DateCalendrier parDate, Set <Reservation> reservations){
         this.date = parDate;
         weekOfYear.setText("Semaine " + date.getWeekOfYear());

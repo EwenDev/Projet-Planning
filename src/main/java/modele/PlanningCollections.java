@@ -8,24 +8,38 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.Map;
 
-
+/**
+ * Classe PlanningCollections qui permet de créer une collection de réservations et de les gérer
+ */
 public class PlanningCollections implements Serializable {
     private ArrayList <Reservation> chReserv;
     private TreeSet <Reservation> chTrReserv;
     private Map <Integer, Set <Reservation>> chSemRes;
 
+    /**
+     * Constructeur de la classe PlanningCollections
+     */
     public PlanningCollections() {
         chReserv = new ArrayList <Reservation> ();
         chTrReserv = new TreeSet <Reservation> ();
         chSemRes = new TreeMap <>();
     }
 
+    /**
+     * Constructeur de la classe PlanningCollections
+     * @param parReserv : ArrayList de réservations
+     * @param parTrReserv : TreeSet de réservations
+     */
     public PlanningCollections(ArrayList<Reservation> parReserv,TreeSet<Reservation> parTrReserv){
         chReserv = parReserv;
         chTrReserv = parTrReserv;
         chSemRes = new TreeMap<>();
     }
 
+    /**
+     * Retourne les champs de la classe sous forme de String
+     * @return String : les champs de la classe sous forme de String avec leur taille
+     */
     public String toString() {
         String strTab = new String();
         strTab += chReserv.size() + "\n";
@@ -38,9 +52,9 @@ public class PlanningCollections implements Serializable {
     }
 
     /**
-     * Vérifie si la fonction en paramètre est valide puis si elle ne chevauche pas une autre est insérée
-     *
-     * @param parRes
+     * Ajoute une réservation à la collection de réservations si elle est valide et si elle n'existe pas déjà
+     * @param parRes : la réservation à ajouter
+     * @throws ExceptionPlanning : si la réservation n'est pas valide ou si elle existe déjà
      */
     public void ajout(Reservation parRes) throws ExceptionPlanning {
         if (!parRes.estValide())
@@ -71,9 +85,8 @@ public class PlanningCollections implements Serializable {
     /**
      * Parcours le TreeSet de this, quand une reservation correspondant à la date en paramètre est trouvée,
      * elle est ajoutée à un nouveau TreeSet qui est renvoyé à la fin
-     *
-     * @param parDate
-     * @return
+     * @param parDate : la date à laquelle on veut récupérer les réservations
+     * @return TreeSet <Reservation> : les réservations à la date en paramètre
      */
     public TreeSet <Reservation> getReservations(DateCalendrier parDate) {
         TreeSet <Reservation> result = new TreeSet <Reservation>();
@@ -91,9 +104,8 @@ public class PlanningCollections implements Serializable {
     /**
      * Parcours le TreeSet de this, quand une reservation correspondant au libellé en paramètre est trouvée,
      * elle est ajoutée à un nouveau TreeSet qui est renvoyé à la fin
-     *
-     * @param parString
-     * @return
+     * @param parString : le libellé à laquelle on veut récupérer les réservations
+     * @return TreeSet <Reservation> : les réservations au libellé en paramètre
      */
     public TreeSet <Reservation> getReservations(String parString) {
         TreeSet <Reservation> result = new TreeSet <Reservation>();
@@ -108,6 +120,11 @@ public class PlanningCollections implements Serializable {
         return result;
     }
 
+    /**
+     * Retourne les réservations de la semaine en paramètre
+     * @param parSemaine : la semaine dont on veut récupérer les réservations
+     * @return Set <Reservation> : les réservations de la semaine en paramètre
+     */
     public Set <Reservation> getSemReservations(int parSemaine) {
         return chSemRes.get(parSemaine);
     }

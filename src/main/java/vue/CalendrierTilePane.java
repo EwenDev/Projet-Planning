@@ -16,9 +16,15 @@ import javafx.scene.control.Button;
 
 import java.util.List;
 
+/**
+ * Classe permettant de créer un calendrier avec des boutons pour changer de mois sous la forme d'un TilePane
+ */
 public class CalendrierTilePane extends VBox implements ConstanteCalendrier {
     private int mois;
 
+    /**
+     * Constructeur de la classe CalendrierTilePane qui va créer les différents éléments du calendrier et les ajouter à la VBox
+     */
     public CalendrierTilePane(){
 
         super(15); //espacement

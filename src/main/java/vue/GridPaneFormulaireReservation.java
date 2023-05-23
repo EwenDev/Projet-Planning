@@ -14,6 +14,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 
+/**
+ * Classe permettant de créer un formulaire de réservation sous la forme d'un GridPane
+ */
 public class GridPaneFormulaireReservation extends GridPane implements ConstanteCalendrier {
     public static ComboBox<String> comboHeureDebut;
     public static ComboBox<String> comboHeureFin;
@@ -24,6 +27,9 @@ public class GridPaneFormulaireReservation extends GridPane implements Constante
     public static DateCalendrier date;
     public static Label labelTitle;
 
+    /**
+     * Constructeur de la classe GridPaneFormulaireReservation qui va créer les différents éléments du formulaire et les ajouter au GridPane
+     */
     public GridPaneFormulaireReservation() {
         Controleur controleur = HBoxRoot.getControleur();
         DateCalendrier today = new DateCalendrier();
@@ -121,6 +127,11 @@ public class GridPaneFormulaireReservation extends GridPane implements Constante
         buttonAnnuler.addEventHandler(ActionEvent.ACTION, controleur);
     }
 
+    /**
+     * Méthode permettant de créer une ComboBox à partir d'un tableau de String
+     * @param strings tableau de String
+     * @return ComboBox<String>
+     */
     private ComboBox<String> peupleComboBox (String [] strings){
         ComboBox<String> comboBox = new ComboBox<>();
         for(String string : strings){
@@ -129,27 +140,51 @@ public class GridPaneFormulaireReservation extends GridPane implements Constante
         return comboBox;
     }
 
+    /**
+     * Méthode permettant de modifier la date affichée dans le formulaire
+     * @param parDate DateCalendrier
+     */
     public static void setDate(DateCalendrier parDate){
         date = parDate;
         labelTitle.setText((JOURS_SEMAINE[date.getJourSemaine() - 1] + " " + date.getJour() + " " + MOIS[date.getMois() - 1] + " " + date.getAnnee()));
     }
 
+    /**
+     * Méthode permettant de récupérer la date selectionnée dans le formulaire
+     * @return DateCalendrier
+     */
     public static DateCalendrier getDate(){
         return date;
     }
 
+    /**
+     * Méthode permettant de récupérer l'horaire de début selectionnée dans le formulaire
+     * @return Horaire
+     */
     public static Horaire getHoraireDebut(){
         return new Horaire(Integer.valueOf(comboHeureDebut.getValue()), Integer.valueOf(comboMinDebut.getValue()));
     }
 
+    /**
+     * Méthode permettant de récupérer l'horaire de fin selectionnée dans le formulaire
+     * @return Horaire
+     */
     public static Horaire getHoraireFin(){
         return new Horaire(Integer.valueOf(comboHeureFin.getValue()), Integer.valueOf(comboMinFin.getValue()));
     }
 
+    /**
+     * Méthode permettant de récupérer l'intitulé du cours entré dans le formulaire
+     * @return String
+     */
     public static String getIntitule(){
         return fieldCours.getText();
     }
 
+    /**
+     * Méthode permettant de récupérer le niveau du cours selectionnée dans le formulaire
+     * @return String
+     */
     public static String getNiveau(){
         return ((Labeled) radioGroup.getSelectedToggle()).getText();
     }

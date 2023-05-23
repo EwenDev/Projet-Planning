@@ -7,7 +7,16 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.File;
 
+/**
+ * Classe permettant de lire et d'écrire dans un fichier
+ */
 public class LectureEcriture {
+
+    /**
+     * Méthode permettant de lire dans un fichier
+     * @param file : le fichier à lire
+     * @return Object : l'objet lu
+     */
     public static Object lecture (File file){
         ObjectInputStream flux;
         Object objetLu = null;
@@ -32,6 +41,11 @@ public class LectureEcriture {
         return objetLu;
     }
 
+    /**
+     * Méthode permettant d'écrire dans un fichier
+     * @param file : le fichier à écrire
+     * @param object : l'objet à écrire
+     */
     public static void ecriture (File file, Object object){
         ObjectOutputStream flux = null;
 

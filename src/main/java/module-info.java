@@ -8,4 +8,6 @@ module com.example.projetihm {
     exports com.example.projetihm;
     exports vue;
     exports modele;
+    exports controleur;
+    exports outils;
 }

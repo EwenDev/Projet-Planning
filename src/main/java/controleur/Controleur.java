@@ -8,10 +8,18 @@ import modele.*;
 import vue.*;
 import outils.LectureEcriture;
 
+/**
+ * Classe Controleur qui va gérer les évènements de l'application
+ */
 public class Controleur implements EventHandler {
 
     DateCalendrier date;
     PlanningCollections planning;
+
+    /**
+     * Méthode permettant de gérer les évènements de l'application comme l'enregistrement d'une réservation ou le changement de jour et de semaine
+     * @param event : l'évènement à gérer
+     */
     @Override
     public void handle(Event event) {
         planning = HBoxRoot.getPlanning();
