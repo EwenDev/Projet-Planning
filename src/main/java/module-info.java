@@ -5,7 +5,6 @@ module com.example.projetihm {
     requires org.controlsfx.controls;
 
     opens com.example.projetihm to javafx.fxml;
-    exports com.example.projetihm;
     exports vue;
     exports modele;
     exports controleur;
