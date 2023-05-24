@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/wenwe/OneDrive/Documents/GitHub/TP-JAVA/src/main/java</OriginalElement>
+  <nodes>
+    <node x="143.90719937905388" y="1543.014018428532">vue.VBaseRootStackMonths</node>
+    <node x="1524.362759151187" y="1672.6440606816932">modele.CalendrierDuMois</node>
+    <node x="440.2543414228312" y="1116.8559001512858">vue.GridPaneFormulaireReservation</node>
+    <node x="2297.9114604360952" y="1426.4992570722106">modele.ExceptionPlanning</node>
+    <node x="1634.5831298698934" y="709.0006354009076">modele.Horaire</node>
+    <node x="958.487110438729" y="1543.014018428532">vue.CalendrierTilePane</node>
+    <node x="2058.4803824172145" y="648.2223903177003">modele.PlageHoraire</node>
+    <node x="1272.5816944024205" y="1782.7877155824508">controleur.Controleur</node>
+    <node x="1180.4303320076717" y="677.0607449960611">modele.DateCalendrier</node>
+    <node x="720.5215128593042" y="1666.0">vue.VBoxCalendrier</node>
+    <node x="1817.8358039548289" y="1349.4993645990924">modele.PlanningCollections</node>
+    <node x="732.0226928895611" y="1837.2877155824508">vue.HBoxRoot</node>
+    <node x="482.50196435601225" y="1866.9244992342751">vue.Projet2Application</node>
+    <node x="1841.714188977522" y="918.0">modele.Reservation</node>
+    <node x="2278.764447034557" y="1050.0">modele.Planning</node>
+    <node x="968.9871104387291" y="1166.9173546202628">outils.LectureEcriture</node>
+    <node x="266.0843238935089" y="931.7791705069125">vue.VBoxAffichagePlanning</node>
+    <node x="958.4871104387291" y="1297.1184438789624">modele.ConstantesErreur</node>
+    <node x="824.4996928895611" y="870.1101255231677">modele.ConstanteCalendrier</node>
+    <node x="1446.3342511186247" y="1141.9242302892562">modele.Date</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="modele.DateCalendrier" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="-120.50033200767166" y="-29.999744996061054" />
+      <point x="804.0" y="764.061" />
+      <point x="804.0" y="941.11" />
+      <point x="-104.49969288956106" y="-1.2552316763958515E-4" />
+    </edge>
+    <edge source="vue.VBaseRootStackMonths" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="-102.0" y="0.0" />
+      <point x="126.40719937905388" y="1582.014018428532" />
+      <point x="126.40719937905388" y="734.061" />
+      <point x="-120.5" y="-59.999744996061054" />
+    </edge>
+    <edge source="modele.PlanningCollections" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="1.9604517115112685E-4" y="127.99963540090766" />
+      <point x="2009.836" y="1636.0" />
+      <point x="1300.93" y="1636.0" />
+      <point x="-3.3200767165908474E-4" y="117.00025500393895" />
+    </edge>
+    <edge source="modele.PlanningCollections" target="modele.ExceptionPlanning" relationship="CREATE">
+      <point x="192.00019604517092" y="-3.645990923359932E-4" />
+      <point x="-86.49994891535789" y="1.0752688172033231E-4" />
+    </edge>
+    <edge source="modele.CalendrierDuMois" target="modele.DateCalendrier" relationship="TO_MANY">
+      <point x="-134.0" y="-96.14406068169319" />
+      <point x="1330.93" y="1682.5" />
+      <point x="29.99966799232834" y="117.0" />
+    </edge>
+    <edge source="vue.GridPaneFormulaireReservation" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="45.0" y="-194.0" />
+      <point x="638.7543414228312" y="824.0607449960611" />
+      <point x="-120.5" y="30.0" />
+    </edge>
+    <edge source="modele.Reservation" target="modele.PlageHoraire" relationship="TO_ONE">
+      <point x="142.5" y="-161.0" />
+      <point x="-33.266193439692415" y="117.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.CalendrierTilePane" relationship="CREATE">
+      <point x="142.96441754916782" y="-161.0" />
+      <point x="0.0" y="39.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="modele.PlanningCollections" relationship="CREATE">
+      <point x="167.0" y="15.0" />
+      <point x="2054.8360000000002" y="2013.2877155824508" />
+      <point x="45.00019604517138" y="128.0" />
+    </edge>
+    <edge source="modele.PlageHoraire" target="modele.ExceptionPlanning" relationship="CREATE">
+      <point x="-3.824172144959448E-4" y="116.9996096822997" />
+      <point x="2167.48" y="1049.0" />
+      <point x="2230.0" y="1049.0" />
+      <point x="2230.0" y="1477.4993645990924" />
+      <point x="-86.49994891535789" y="1.0752688172033231E-4" />
+    </edge>
+    <edge source="modele.Planning" target="modele.Reservation" relationship="TO_MANY">
+      <point x="-122.0" y="15.0" />
+      <point x="150.0" y="81.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="0.0" y="-161.0" />
+      <point x="-29.976999999999975" y="71.0" />
+    </edge>
+    <edge source="vue.CalendrierTilePane" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="-83.49999999999989" y="0.0" />
+      <point x="920.793736762481" y="1582.014018428532" />
+      <point x="-8.205956127080071" y="71.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.GridPaneFormulaireReservation" relationship="TO_ONE">
+      <point x="-167.0" y="-148.86321634817568" />
+      <point x="593.7543414228312" y="1849.4244992342751" />
+      <point x="0.0" y="194.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="controleur.Controleur" relationship="TO_ONE">
+      <point x="167.0" y="-153.5" />
+      <point x="-101.5" y="0.0" />
+    </edge>
+    <edge source="vue.CalendrierTilePane" target="modele.Date" relationship="CREATE">
+      <point x="83.5" y="-37.5897881392757" />
+      <point x="-105.0" y="197.5" />
+    </edge>
+    <edge source="modele.Planning" target="modele.ExceptionPlanning" relationship="CREATE">
+      <point x="-16.35298659846194" y="95.0" />
+      <point x="0.0" y="-51.0" />
+    </edge>
+    <edge source="vue.Projet2Application" target="vue.HBoxRoot" relationship="CREATE">
+      <point x="84.5" y="0.0" />
+      <point x="-167.0" y="-81.36321634817568" />
+    </edge>
+    <edge source="modele.Reservation" target="modele.ExceptionPlanning" relationship="CREATE">
+      <point x="149.99981102247784" y="0.0" />
+      <point x="2230.0" y="1079.0" />
+      <point x="2230.0" y="1477.4993645990924" />
+      <point x="-86.49994891535789" y="1.0752688172033231E-4" />
+    </edge>
+    <edge source="vue.VBoxAffichagePlanning" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="0.0" y="-73.0" />
+      <point x="418.0843238935089" y="794.0607449960611" />
+      <point x="-120.5" y="0.0" />
+    </edge>
+    <edge source="vue.VBaseRootStackMonths" target="modele.CalendrierDuMois" relationship="CREATE">
+      <point x="-1.9937905386768762E-4" y="38.99998157146797" />
+      <point x="245.907" y="1644.0" />
+      <point x="1056.987" y="1644.0" />
+      <point x="1056.987" y="1712.5" />
+      <point x="-133.99975915118694" y="-66.14406068169319" />
+    </edge>
+    <edge source="modele.PlageHoraire" target="modele.Horaire" relationship="TO_ONE">
+      <point x="-109.0" y="60.778245083207366" />
+      <point x="87.0" y="0.0" />
+    </edge>
+    <edge source="controleur.Controleur" target="modele.PlageHoraire" relationship="CREATE">
+      <point x="0.0" y="62.0" />
+      <point x="1374.0816944024205" y="1954.2877155824508" />
+      <point x="2540.264447034557" y="1954.2877155824508" />
+      <point x="2540.264447034557" y="765.2223903177003" />
+      <point x="109.0" y="0.0" />
+    </edge>
+    <edge source="vue.GridPaneFormulaireReservation" target="modele.Horaire" relationship="CREATE">
+      <point x="0.0" y="-194.0" />
+      <point x="593.7543414228312" y="630.7223903177003" />
+      <point x="1721.5831298698934" y="630.7223903177003" />
+      <point x="0.0" y="-117.0" />
+    </edge>
+    <edge source="controleur.Controleur" target="modele.PlanningCollections" relationship="TO_ONE">
+      <point x="15.0" y="62.0" />
+      <point x="1389.0816944024205" y="1939.2877155824508" />
+      <point x="2024.836" y="1939.2877155824508" />
+      <point x="15.000196045171151" y="128.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.CalendrierTilePane" relationship="TO_ONE">
+      <point x="127.96441754916782" y="-161.0" />
+      <point x="-15.0" y="39.0" />
+    </edge>
+    <edge source="controleur.Controleur" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="-101.5" y="-39.5" />
+      <point x="1255.0816944024205" y="1805.2877155824508" />
+      <point x="-45.84863760525127" y="117.0" />
+    </edge>
+    <edge source="vue.VBaseRootStackMonths" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="-93.77706903393212" y="-39.0" />
+      <point x="152.13013034512176" y="900.5" />
+      <point x="-104.5" y="-40.61012552316765" />
+    </edge>
+    <edge source="vue.VBoxCalendrier" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="-19.859512859304118" y="-27.0" />
+      <point x="774.662" y="1537.356" />
+      <point x="804.0" y="1537.356" />
+      <point x="804.0" y="941.11" />
+      <point x="-104.49969288956106" y="-1.2552316763958515E-4" />
+    </edge>
+    <edge source="vue.VBoxCalendrier" target="modele.CalendrierDuMois" relationship="CREATE">
+      <point x="4.871406958955049E-4" y="-27.0" />
+      <point x="794.522" y="1644.0" />
+      <point x="1056.987" y="1644.0" />
+      <point x="1056.987" y="1712.5" />
+      <point x="-133.99975915118694" y="-66.14406068169319" />
+    </edge>
+    <edge source="vue.GridPaneFormulaireReservation" target="modele.ConstanteCalendrier" relationship="REALIZATION">
+      <point x="153.5" y="0.0" />
+      <point x="935.793736762481" y="1310.8559001512858" />
+      <point x="6.794043872919929" y="71.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.VBoxAffichagePlanning" relationship="TO_ONE">
+      <point x="-167.0" y="0.0" />
+      <point x="418.0843238935089" y="1998.2877155824508" />
+      <point x="0.0" y="73.00000000000011" />
+    </edge>
+    <edge source="controleur.Controleur" target="modele.Reservation" relationship="CREATE">
+      <point x="0.0" y="-62.0" />
+      <point x="1374.0816944024205" y="1070.2791705069126" />
+      <point x="-150.0" y="-8.720829493087422" />
+    </edge>
+    <edge source="modele.CalendrierDuMois" target="modele.DateCalendrier" relationship="CREATE">
+      <point x="-134.0" y="-81.14406068169319" />
+      <point x="1315.93" y="1697.5" />
+      <point x="14.999667992328341" y="117.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.VBoxAffichagePlanning" relationship="CREATE">
+      <point x="-167.0" y="15.0" />
+      <point x="403.0843238935089" y="2013.2877155824508" />
+      <point x="-15.0" y="73.00000000000011" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="controleur.Controleur" relationship="CREATE">
+      <point x="167.0" y="-138.5" />
+      <point x="-101.5" y="15.0" />
+    </edge>
+    <edge source="controleur.Controleur" target="modele.DateCalendrier" relationship="TO_ONE">
+      <point x="-88.15169440242039" y="-62.0" />
+      <point x="-15.000332007671659" y="117.0" />
+    </edge>
+    <edge source="vue.CalendrierTilePane" target="modele.CalendrierDuMois" relationship="CREATE">
+      <point x="14.999889561271175" y="38.99998157146797" />
+      <point x="1056.987" y="1712.5" />
+      <point x="-133.99975915118694" y="-66.14406068169319" />
+    </edge>
+    <edge source="modele.PlanningCollections" target="modele.Reservation" relationship="TO_MANY">
+      <point x="1.9604517115112685E-4" y="-128.00036459909234" />
+      <point x="2009.836" y="1295.0" />
+      <point x="1991.714" y="1295.0" />
+      <point x="-1.8897752215707442E-4" y="161.0" />
+    </edge>
+    <edge source="modele.DateCalendrier" target="modele.Date" relationship="GENERALIZATION">
+      <point x="120.5" y="0.0" />
+      <point x="1551.3342511186247" y="794.0607449960611" />
+      <point x="0.0" y="-205.0" />
+    </edge>
+    <edge source="modele.Reservation" target="modele.Date" relationship="TO_ONE">
+      <point x="-150.0" y="70.42423028925623" />
+      <point x="105.0" y="-197.5" />
+    </edge>
+    <edge source="vue.VBoxAffichagePlanning" target="modele.DateCalendrier" relationship="TO_ONE">
+      <point x="15.0" y="-73.0" />
+      <point x="433.0843238935089" y="809.0607449960611" />
+      <point x="-120.5" y="15.0" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="vue.GridPaneFormulaireReservation" relationship="CREATE">
+      <point x="-15.0" y="-161.0" />
+      <point x="884.0226928895611" y="1805.2877155824508" />
+      <point x="608.7543414228312" y="1805.2877155824508" />
+      <point x="15.0" y="194.0" />
+    </edge>
+    <edge source="vue.GridPaneFormulaireReservation" target="modele.DateCalendrier" relationship="TO_ONE">
+      <point x="30.0" y="-194.0" />
+      <point x="623.7543414228312" y="749.061" />
+      <point x="-120.5" y="-44.999744996061054" />
+    </edge>
+    <edge source="vue.HBoxRoot" target="modele.PlanningCollections" relationship="TO_ONE">
+      <point x="167.0" y="0.0" />
+      <point x="2039.836" y="1998.2877155824508" />
+      <point x="30.00019604517115" y="128.0" />
+    </edge>
+    <edge source="modele.Planning" target="modele.Reservation" relationship="CREATE">
+      <point x="-122.0" y="0.0" />
+      <point x="150.0" y="66.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.3483518835616439" showDependencies="true" x="1526.9895545314896" y="1441.753302611367" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
